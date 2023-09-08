@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/food-bank/static/css/main.5a6b77ea.css",
+    "main.js": "/food-bank/static/js/main.6bcce0ab.js",
+    "static/js/787.3adb45fa.chunk.js": "/food-bank/static/js/787.3adb45fa.chunk.js",
+    "static/media/asian.png": "/food-bank/static/media/asian.d357cc90d6cbdb442e56.png",
+    "static/media/dessert.png": "/food-bank/static/media/dessert.63232bee5fa807e49c56.png",
+    "static/media/full table.jpg": "/food-bank/static/media/full table.7cb78fcb7e8a3408f0db.jpg",
+    "static/media/continental.png": "/food-bank/static/media/continental.06257e395c41f0c25b00.png",
+    "static/media/logo.png": "/food-bank/static/media/logo.acec7abf5034aa112867.png",
+    "static/media/mainLogo.png": "/food-bank/static/media/mainLogo.521c692f7f63180c0417.png",
+    "index.html": "/food-bank/index.html",
+    "main.5a6b77ea.css.map": "/food-bank/static/css/main.5a6b77ea.css.map",
+    "main.6bcce0ab.js.map": "/food-bank/static/js/main.6bcce0ab.js.map",
+    "787.3adb45fa.chunk.js.map": "/food-bank/static/js/787.3adb45fa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a6b77ea.css",
+    "static/js/main.6bcce0ab.js"
+  ]
+}
