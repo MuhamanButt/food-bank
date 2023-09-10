@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/food-bank/static/css/main.550a1088.css",
-    "main.js": "/food-bank/static/js/main.0405d224.js",
+    "main.js": "/food-bank/static/js/main.47e10b56.js",
     "static/js/787.3adb45fa.chunk.js": "/food-bank/static/js/787.3adb45fa.chunk.js",
     "static/media/asian.png": "/food-bank/static/media/asian.d357cc90d6cbdb442e56.png",
     "static/media/dessert.png": "/food-bank/static/media/dessert.63232bee5fa807e49c56.png",
@@ -11,11 +11,11 @@
     "static/media/mainLogo.png": "/food-bank/static/media/mainLogo.521c692f7f63180c0417.png",
     "index.html": "/food-bank/index.html",
     "main.550a1088.css.map": "/food-bank/static/css/main.550a1088.css.map",
-    "main.0405d224.js.map": "/food-bank/static/js/main.0405d224.js.map",
+    "main.47e10b56.js.map": "/food-bank/static/js/main.47e10b56.js.map",
     "787.3adb45fa.chunk.js.map": "/food-bank/static/js/787.3adb45fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.550a1088.css",
-    "static/js/main.0405d224.js"
+    "static/js/main.47e10b56.js"
   ]
 }
