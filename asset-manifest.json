@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/food-bank/static/css/main.ffa09966.css",
-    "main.js": "/food-bank/static/js/main.b2f4d2a3.js",
+    "main.css": "/food-bank/static/css/main.530e9ffa.css",
+    "main.js": "/food-bank/static/js/main.2374765d.js",
     "static/js/787.3adb45fa.chunk.js": "/food-bank/static/js/787.3adb45fa.chunk.js",
     "static/media/asian.png": "/food-bank/static/media/asian.d357cc90d6cbdb442e56.png",
     "static/media/dessert.png": "/food-bank/static/media/dessert.63232bee5fa807e49c56.png",
@@ -10,12 +10,12 @@
     "static/media/logo.png": "/food-bank/static/media/logo.acec7abf5034aa112867.png",
     "static/media/mainLogo.png": "/food-bank/static/media/mainLogo.521c692f7f63180c0417.png",
     "index.html": "/food-bank/index.html",
-    "main.ffa09966.css.map": "/food-bank/static/css/main.ffa09966.css.map",
-    "main.b2f4d2a3.js.map": "/food-bank/static/js/main.b2f4d2a3.js.map",
+    "main.530e9ffa.css.map": "/food-bank/static/css/main.530e9ffa.css.map",
+    "main.2374765d.js.map": "/food-bank/static/js/main.2374765d.js.map",
     "787.3adb45fa.chunk.js.map": "/food-bank/static/js/787.3adb45fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffa09966.css",
-    "static/js/main.b2f4d2a3.js"
+    "static/css/main.530e9ffa.css",
+    "static/js/main.2374765d.js"
   ]
 }
