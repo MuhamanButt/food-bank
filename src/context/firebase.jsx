@@ -368,7 +368,7 @@ const FirebaseProvider = (props) => {
           deleteDoc(documentRef);
           console.log("Document successfully deleted.");
 
-          document
+          if (document.getElementById("ownerPage")){ document
             .getElementById("alert-delete-success")
             .classList.remove("d-none");
           setTimeout(() => {
@@ -376,10 +376,10 @@ const FirebaseProvider = (props) => {
               document
                 .getElementById("alert-delete-success")
                 .classList.add("d-none");
-          }, 2000);
+          }, 2000);}
         } catch (error) {
           console.error("Error deleting document: ", error);
-          document
+          if (document.getElementById("ownerPage")){document
             .getElementById("alert-delete-danger")
             .classList.remove("d-none");
           if (document.getElementById("ownerPage"))
@@ -387,7 +387,7 @@ const FirebaseProvider = (props) => {
               document
                 .getElementById("alert-delete-danger")
                 .classList.add("d-none");
-            }, 2000);
+            }, 2000);}
         }
       });
     } else {

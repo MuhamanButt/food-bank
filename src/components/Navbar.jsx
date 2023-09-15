@@ -44,8 +44,6 @@ const [UserName, setUserName] = useState("");
       firebase.User&&setUserName(await firebase.getUserName(firebase.User.uid))
       
     }
-    const url=window.location.href
-    console.log(url)
     invoke();
   })
   return (
@@ -129,7 +127,7 @@ const [UserName, setUserName] = useState("");
           <button type="button" className="btn-close btn-close-white" onClick={handleCloseOffcanvas} aria-label="Close"></button>
         </div>
         <div className="offcanvas-body">
-          {firebase.User && <Nav.Link as={NavLink} to={`/users/view/profile/${firebase.User.uid}`} className="Link offcanvas-item">
+          {firebase.User && <Nav.Link as={NavLink} to={`/users/view/profile/${firebase.User.uid}`} className="Link offcanvas-item user-profile-name">
            {UserName}
           </Nav.Link>}
           <Nav.Link as={NavLink} to={"/CreateAccount"} className="Link offcanvas-item">

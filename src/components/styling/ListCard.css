@@ -27,22 +27,46 @@
   color: rgb(175, 175, 175);
   font-weight: 300;
 }
-.reviewText
+/* .list-card
 {
-  cursor: pointer;
+  background-image: linear-gradient(180deg, #181836, #0f0f1e);
+  padding: 10px ;
+  border-radius: 10px;
+  border: 1px solid #ff4f4f;
+} */
+.list-card-option-icon
+{
+  float: right;
+  color: white;
 }
-.reviewText:hover
-{
+.reviewText {
+  cursor: pointer;
+  padding: 0px !important;
+}
+.reviewText:hover {
   color: rgb(227, 227, 227) !important;
 }
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-  .reviewText
-  {
-  font-size: 12px !important;
+  .reviewText {
+    font-size: 12px !important;
   }
-
+  
 }
-
+@media screen and (max-width: 330px) {
+  .list-card-heading{
+    font-size: 15px !important;
+  }
+  .listCard-Button {
+    width: 70px !important;
+    font-size: 10px !important;
+  }
+}
+@media screen and (max-width: 410px) {
+  .reviewText {
+    font-size: 10px;
+    
+  }
+}
 @media screen and (max-width: 480px) {
   .listCard-image {
     height: 130px;

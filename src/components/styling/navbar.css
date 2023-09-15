@@ -10,7 +10,10 @@
   text-decoration: none;
   color: white;
 }
-
+.user-profile-name
+{
+  font-weight: 700 !important;
+}
 @media screen and (max-width: 450px) {
   .navbar-logo {
     height: 30px;
