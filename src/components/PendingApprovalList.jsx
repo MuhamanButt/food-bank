@@ -12,7 +12,7 @@ const PendingApprovalList = ({ RecipeList }) => {
     <div className="row justify-content-center m-0 overflow-x-hidden" data-aos="fade-right"
     data-aos-offset="300"
     data-aos-easing="ease-in-sine">
-      =
+      
       {RecipeList.map((recipe, index) => (
         <PendingApprovalListCard
           key={index}
