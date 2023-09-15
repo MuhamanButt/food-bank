@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/food-bank/static/css/main.50a9a274.css",
-    "main.js": "/food-bank/static/js/main.db5f66e3.js",
-    "static/js/787.3adb45fa.chunk.js": "/food-bank/static/js/787.3adb45fa.chunk.js",
-    "static/media/asian.png": "/food-bank/static/media/asian.d357cc90d6cbdb442e56.png",
-    "static/media/dessert.png": "/food-bank/static/media/dessert.63232bee5fa807e49c56.png",
-    "static/media/full table.jpg": "/food-bank/static/media/full table.7cb78fcb7e8a3408f0db.jpg",
-    "static/media/continental.png": "/food-bank/static/media/continental.06257e395c41f0c25b00.png",
-    "static/media/logo.png": "/food-bank/static/media/logo.acec7abf5034aa112867.png",
-    "static/media/mainLogo.png": "/food-bank/static/media/mainLogo.521c692f7f63180c0417.png",
-    "index.html": "/food-bank/index.html",
-    "main.50a9a274.css.map": "/food-bank/static/css/main.50a9a274.css.map",
-    "main.db5f66e3.js.map": "/food-bank/static/js/main.db5f66e3.js.map",
-    "787.3adb45fa.chunk.js.map": "/food-bank/static/js/787.3adb45fa.chunk.js.map"
+    "main.css": "./static/css/main.08dc0543.css",
+    "main.js": "./static/js/main.0ce1d34b.js",
+    "static/js/787.3adb45fa.chunk.js": "./static/js/787.3adb45fa.chunk.js",
+    "static/media/asian.png": "./static/media/asian.d357cc90d6cbdb442e56.png",
+    "static/media/dessert.png": "./static/media/dessert.63232bee5fa807e49c56.png",
+    "static/media/full table.jpg": "./static/media/full table.7cb78fcb7e8a3408f0db.jpg",
+    "static/media/continental.png": "./static/media/continental.06257e395c41f0c25b00.png",
+    "static/media/logo.png": "./static/media/logo.acec7abf5034aa112867.png",
+    "static/media/mainLogo.png": "./static/media/mainLogo.521c692f7f63180c0417.png",
+    "index.html": "./index.html",
+    "main.08dc0543.css.map": "./static/css/main.08dc0543.css.map",
+    "main.0ce1d34b.js.map": "./static/js/main.0ce1d34b.js.map",
+    "787.3adb45fa.chunk.js.map": "./static/js/787.3adb45fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50a9a274.css",
-    "static/js/main.db5f66e3.js"
+    "static/css/main.08dc0543.css",
+    "static/js/main.0ce1d34b.js"
   ]
 }
