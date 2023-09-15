@@ -21,10 +21,10 @@ const LoginPage = () => {
   );
 
   const logOutHandler = async () => {
-    setuserIsLoggedIn(false);
-    setlogin(true)
-    setlogOut(false)
     await firebase.signOutUser();
+    setuserIsLoggedIn(firebase.getUserisLoggedIn());
+    setlogin(firebase.getUserisLoggedIn())
+    setlogOut(firebase.getUserisLoggedIn())
   };
   const signInuserHandler = async () => {
     Email ? setEmail(Email) : setEmail(" ");
@@ -47,7 +47,13 @@ const LoginPage = () => {
           }, 2000);
           setlogOut(true);
           setlogin(false)
+          if(firebase.lastViewedPage!="/")
+          {
+            navigate(firebase.lastViewedPage)
+            firebase.setLastViewedPage("/")
+          }
       }
+
     }
     else
     {
@@ -60,7 +66,9 @@ const LoginPage = () => {
       }, 2000);
     }
   };
-  useEffect(() => {}, [userIsLoggedIn]);
+  useEffect(() => {
+    
+  }, [userIsLoggedIn]);
   const createAccountHandler = () => {
     navigate("/CreateAccount");
   };
@@ -107,7 +115,7 @@ const LoginPage = () => {
               <Form.Group className="mb-3">
                 <Form.Label className="form-label">Password</Form.Label>
                 <Form.Control
-                  type="password"
+                  type="password" id="Password" name="Password"
                   placeholder="Enter Password"
                   className="form-text-area"
                   value={Password}
@@ -117,16 +125,9 @@ const LoginPage = () => {
               </Form.Group>
               <div className="row m-0 justify-content-center mt-3">
                 <div className="col p-0 text-center">
-                  {logOut && 
-                    <Button
-                      variant="danger"
-                      className="w-75"
-                      onClick={logOutHandler}
-                      id="logoutBtn"
-                    >Logout
-                    </Button>}
                   {
                   login && 
+                    <>
                     <Button
                       variant="danger"
                       className="w-75"
@@ -134,9 +135,9 @@ const LoginPage = () => {
                       id="loginBtn"
                     > Login
                     </Button>
+                  <h6 className="text-white">OR</h6></>
                   }
 
-                  <h6 className="text-white">OR</h6>
                   <Button
                     variant="danger"
                     className="w-75"

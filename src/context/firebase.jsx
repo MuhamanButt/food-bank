@@ -42,6 +42,11 @@ export const useFirebase = () => useContext(firebaseContext);
 const FirebaseProvider = (props) => {
   const [User, setUser] = useState(null);
   const [OwnerState, setOwnerState] = useState(false);
+  const [lastViewedPage, setlastViewedPage] = useState('/');
+const setLastViewedPage=async (str)=>{
+  setlastViewedPage(str)
+  
+}
   //!-----------------------------------------------------------------------------getImageURL
   const getImageURL = (path) => {
     return getDownloadURL(ref(storage, path));
@@ -127,7 +132,7 @@ const FirebaseProvider = (props) => {
       }
     }
   };
-  
+  //!-----------------------------------------------------------------------------getReviewsOfRecipe
   const getReviewsOfRecipe = async (identity) => {
     const recipesCollectionRef = collection(firestore, "recipes");
     const q = query(recipesCollectionRef, where("identity", "==", identity));
@@ -142,7 +147,7 @@ const FirebaseProvider = (props) => {
       return [];
     }
   }
-  
+    //!-----------------------------------------------------------------------------addReviewToRecipe
   const addReviewToRecipe = async (
     identity,
     userDetails,
@@ -169,7 +174,6 @@ const FirebaseProvider = (props) => {
       Review: Review,
     });
   };
-  
   //!-----------------------------------------------------------------------------getAllPendingApprovals
   const getAllPendingApprovals = async () => {
     return getDocs(collection(firestore, "approvals"));
@@ -499,7 +503,9 @@ const FirebaseProvider = (props) => {
         isOwnerEmail,
         addReviewToRecipe,
         getReviewsOfRecipe,
-        User
+        User,
+        setLastViewedPage,
+        lastViewedPage
       }}
     >
       {props.children}

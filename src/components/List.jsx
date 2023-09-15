@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import ListCard from "./ListCard";
 import { useNavigate } from "react-router-dom";
+import { useFirebase } from "../context/firebase";
 const List = ({ RecipeList }) => {
+  const firebase=useFirebase();
   const navigate = useNavigate();
   const ViewHandler = (str) => {
     navigate(str);

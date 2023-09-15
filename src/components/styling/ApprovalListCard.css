@@ -9,6 +9,7 @@
 .accordion
 {
     z-index: 10 !important;
+    border: none !important;
 }
 .accordion-body
 {
@@ -20,4 +21,14 @@
     background-color: #0f0f1e !important;
     color: white !important;
     font-weight: 200 !important;
+}
+
+.accordion .card-header button {
+    border: none;
+}
+@media screen and (min-width: 1500px) {
+.accordion-button 
+{
+    font-size: 15px !important;
+}
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {  Route, Routes } from "react-router-dom";
+import {  Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import AddARecipe from "./pages/AddARecipe";
 import GetStarted from "./pages/GetStarted";
@@ -9,6 +9,7 @@ import Desserts from "./pages/Desserts";
 import NoMatchPage from "./pages/NoMatchPage";
 import { useContext,useState } from 'react'
 import { useFirebase } from './context/firebase'
+import { Navigate } from "react-router-dom";
 // import { BrowserRouter } from "react-router-dom";
 import "./App.css";
  import { HashRouter as BrowserRouter } from "react-router-dom";
@@ -47,7 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<GetStarted/>} />
           <Route path="/home" element={Recipes.length > 0 ? <Home recipes={Recipes} /> : <Loader text={"Stirring up something delicious..."}/>} />
-          <Route path="/addARecipe" element={firebase.User?<AddARecipe/>:<LoginPage/>} />
+          <Route path="/addARecipe" element={<AddARecipe></AddARecipe>} />
           <Route path="/categories/asian" element={<Asian/>} />
           <Route path="/categories/continental" element={<Continental/>}/>
           <Route path="/categories/desserts" element={<Desserts/>} />

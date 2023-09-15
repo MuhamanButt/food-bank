@@ -53,12 +53,12 @@ const PendingApprovalListCard = ({
           <p>
             <strong>Description :</strong> {description}
           </p>
-          <Accordion className="accordion accordion-flush">
-            <Accordion.Item eventKey="0">
+          <Accordion className="accordion accordion-flush" >
+            <Accordion.Item eventKey="0" style={{ border: 'none !important' }}>
               <Accordion.Header>
                 <strong>Ingredients :</strong>
               </Accordion.Header>
-              <Accordion.Body>{ingredients}</Accordion.Body>
+              <Accordion.Body style={{ border: 'none' }}>{ingredients}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
               <Accordion.Header>

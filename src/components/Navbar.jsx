@@ -12,20 +12,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { useFirebase } from "../context/firebase";
 import { useNavigate } from "react-router-dom";
-
+import ConfirmationComponent from "./ConfirmationComponent";
 
 const MyNavbar = () => {
   const firebase=useFirebase();
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 const [UserName, setUserName] = useState("");
   const handleShowOffcanvas = () => {
     setShowOffcanvas(true);
   };
-
+  const logOutHandler = async () => {
+    if(firebase.User)
+    {await firebase.signOutUser();
+      handleClose();}
+  };
   const handleCloseOffcanvas = () => {
     setShowOffcanvas(false);
   };
-
+  const showHandler = async () => {
+    if(firebase.User)
+    handleShow();
+  };
   const navigate=useNavigate();
   const deleteRecipe = async () => {
       navigate("/deleteRecipe");
@@ -48,6 +59,18 @@ const [UserName, setUserName] = useState("");
   })
   return (
     <div>
+      {show ? (
+              <ConfirmationComponent
+              heading={"Confirm Logout"}
+              body={"Are you sure you want to logout?"}
+              onConfirmText={"Logout"}
+                onConfirmHandler={logOutHandler}
+                handleClose={handleClose}
+                handleShow={handleShow}
+              ></ConfirmationComponent>
+            ) : (
+              ""
+            )}
       {firebase.OwnerState?(<>
       <Navbar expand="lg" className="navbar" data-bs-theme="dark">
         <Container>
@@ -85,7 +108,7 @@ const [UserName, setUserName] = useState("");
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav.Link as={NavLink} to={"/CreateAccount"} className="Link offcanvas-item">Create Account</Nav.Link>
-          <Nav.Link as={NavLink} to={"/login"} className="Link offcanvas-item">Login as User</Nav.Link>
+          <Nav.Link as={NavLink} to={"/login"} className="Link offcanvas-item" onClick={showHandler}> {firebase.User?("Logout"):("Login as User")}</Nav.Link>
           <Nav.Link as={NavLink} to={"/loginAsOwner"} className="Link offcanvas-item">Login as Owner</Nav.Link>
         </Offcanvas.Body>
       </Offcanvas>
@@ -133,8 +156,8 @@ const [UserName, setUserName] = useState("");
           <Nav.Link as={NavLink} to={"/CreateAccount"} className="Link offcanvas-item">
             Create Account
           </Nav.Link>
-          <Nav.Link as={NavLink} to={"/login"} className="Link offcanvas-item">
-            Login as User
+          <Nav.Link as={NavLink} to={firebase.User?(""):(`/login`)} className="Link offcanvas-item" onClick={showHandler}>
+            {firebase.User?("Logout"):("Login as User")}
           </Nav.Link>
           <Nav.Link as={NavLink} to={"/loginAsOwner"} className="Link offcanvas-item">
             Login as Owner

@@ -59,7 +59,7 @@ const LoginAsOwner = () => {
         <Form.Group className="mb-3">
           <Form.Label className="form-label">Password</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             placeholder="Enter your password"
             className="form-text-area"
             onChange={(e) => setpassword(e.target.value)}

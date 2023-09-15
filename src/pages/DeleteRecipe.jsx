@@ -23,6 +23,7 @@ const DeleteRecipe = () => {
     await firebase.deleteRecipeByName(Name);
     handleClose();
   };
+  
   return (
     <div>
       

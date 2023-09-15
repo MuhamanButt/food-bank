@@ -56,6 +56,7 @@ const RecipeDetail = () => {
               <img src={URL} alt="" className="RecipeDetail-image" />
             </div>
             <div className="col-12 col-lg-7 recipeDetail-text align-self-center mt-5 mt-lg-0 mb-lg-5">
+              
               <NameDisplay
                 heading={"Recipe Name : "}
                 description={Recipe.recipeName}

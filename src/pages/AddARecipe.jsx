@@ -117,7 +117,13 @@ const AddARecipe = () => {
       document.getElementById("loaderRow").classList.add("d-none");
     }
   };
-
+useEffect(()=>{
+  if(!firebase.User)
+  {
+    firebase.setLastViewedPage(document.location.hash.substring(1))
+    navigate("/login");
+  }
+},[firebase.User])
   return (
     <div>
       <MyNavbar></MyNavbar>

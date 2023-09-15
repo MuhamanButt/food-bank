@@ -43,7 +43,8 @@ const ListCard = ({
   const navigate = useNavigate();
   const reviewHandler = (num) => {
     setReviewPoints(num);
-    if (!userIsLoggedIn) {
+    if (!firebase.User) {
+      firebase.setLastViewedPage(document.location.hash.substring(1))
       navigate("/login");
     } else {
       setLgShow(true);
