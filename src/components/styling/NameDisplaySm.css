@@ -1,0 +1,24 @@
+.headingSm
+{
+    font-size: 15px;
+    color: #ff4f4f;
+}
+.descriptionSm
+{
+    font-size: 10px !important;
+    color: rgb(173, 173, 173) ; 
+    margin-bottom: 2px;
+}
+
+
+@media screen and (max-width: 480px) {
+    .headingSm
+{
+    font-size: 8px;
+}
+.descriptionSm
+{
+    font-size: 5px !important;
+    margin-bottom: 1px;
+}
+}

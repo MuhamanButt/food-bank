@@ -1,0 +1,7 @@
+.backgroundImg
+{
+    width: 100%;
+    border-radius: 20px;
+    max-height: 400px;
+    object-fit: cover;
+}

@@ -1,0 +1,156 @@
+.navbar {
+  background-color: transparent !important;
+  color: white;
+}
+.navbar-logo {
+  height: 50px;
+  margin-right: 50px;
+}
+.Link {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 450px) {
+  .navbar-logo {
+    height: 30px;
+    margin-right: 50px;
+  }
+  .navbar-toggler-icon
+{
+  font-size: 10px;
+  align-self: center;
+  margin-bottom: 10px !important;
+}
+.navbar-toggler{
+  padding: 4px 5px !important;
+  align-items: center;
+  height: 24px;
+}
+}
+
+
+.settings-btn:hover
+{
+  background-color: transparent !important;
+  color: white !important;
+}
+.active
+{
+  background-color: transparent !important;
+}
+.dropdown-item:hover {
+  border: 1px solid #243b57;
+  background-color: #ff4f4f !important;
+  font-weight: 600;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.516));
+  border-radius: 10px;
+}
+.dropdown-menu {
+  background-color: #181836 !important;
+  border: 1px solid #ff4f4f !important;
+  padding: 0px 10px !important;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 1));
+}
+.btn-outline-light
+{
+  border: none !important;
+}
+.offcanvas-header
+{
+  background-color: #0f0f1e;
+  color: white;
+  font-weight: 800;
+  border: 1px solid #ff4f4f;
+  z-index: 2;
+}
+.offcanvas-body
+{
+  background-color: #16162a;
+  color: white;
+  border: 1px solid #ff4f4f;
+  filter: drop-shadow(-5px 5px 30px black);
+}
+.offcanvas-item
+{
+  padding: 5px 0px !important;
+}
+.offcanvas-item:hover
+{
+  border-bottom: 1px solid #ff4f4f;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+div[class*=box] {
+  height: 33.33%;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+}
+
+/* 
+========================
+      BUTTON ONE
+========================
+*/
+.btn-one {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+}
+.btn-one span {
+  transition: all 0.3s;
+}
+.btn-one::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.5);
+  transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+  letter-spacing: 2px;
+}
+.btn-one:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.btn-one::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.btn-one:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}

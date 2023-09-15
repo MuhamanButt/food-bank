@@ -1,0 +1,10 @@
+/*
+#0f0f1e   dark blue main
+#ff4f4f    red
+ */
+
+ 
+.dropShadow
+{
+    filter: drop-shadow(5px 5px 5px black);
+}

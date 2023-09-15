@@ -1,0 +1,28 @@
+.RecipeDetail-image
+{
+    width: 100%;
+    border-radius: 30px !important;
+    max-height: 400px;
+    min-height: 400px;
+    object-fit: cover;
+}
+.recipeDetail-text h1
+{
+    font-size: 30px;
+    color: #ff4f4f;
+}
+.recipeDetail-text p
+{
+    font-size: 20px;
+    color: white;
+}
+@media screen and (max-width: 520px) {
+    .RecipeDetail-image
+{
+    width: 100%;
+    border-radius: 30px !important;
+    max-height: 250px;
+    min-height: 250px;
+    object-fit: cover;
+}
+}

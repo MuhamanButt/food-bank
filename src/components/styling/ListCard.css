@@ -1,0 +1,75 @@
+.listCard-row {
+  margin: 20px 5px;
+  max-height: 400px;
+}
+.listCard-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 15px !important;
+}
+.listCard-Button {
+  width: 100px !important;
+  font-size: 10px !important;
+  height: 20px !important;
+  padding: 2px 5px !important;
+}
+.listcard-text h6 {
+  font-size: 20px;
+  color: #ff4f4f;
+}
+.listcard-text strong {
+  color: #ff4f4f;
+}
+.listcard-text p {
+  font-size: 8px;
+  margin-bottom: 3px;
+  color: rgb(175, 175, 175);
+  font-weight: 300;
+}
+.reviewText
+{
+  cursor: pointer;
+}
+.reviewText:hover
+{
+  color: rgb(227, 227, 227) !important;
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .reviewText
+  {
+  font-size: 12px !important;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .listCard-image {
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .listcard-text h6 {
+    font-size: 30px;
+  }
+  .listcard-text p {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 990px) {
+  .listcard-text h6 {
+    font-size: 25px;
+  }
+  .listcard-text p {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .listcard-text h6 {
+    font-size: 30px;
+  }
+  .listcard-text p {
+    font-size: 15px;
+  }
+}

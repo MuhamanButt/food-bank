@@ -1,0 +1,36 @@
+.imageCard-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px !important;
+}
+.imageCard {
+  margin: 10px 15px;
+  padding: 0px !important;
+}
+.imageCard-heading {
+  font-weight: 700 !important;
+  font-size: 25px !important;
+  color: white !important;
+}
+.imageCard-description {
+  height: 150px;
+  color: rgb(138, 138, 138) !important;
+  overflow-y: hidden;
+}
+.card {
+  background-color: transparent !important;
+}
+.imageCard-button {
+  background-color: #ff4f4f !important;
+  border: 2px solid #a52e2e !important;
+  width: 50%;
+  text-align: center;
+}
+@media screen and (max-width: 576px) {
+    
+.imageCard-description {
+    height: 100px;
+    color: rgb(138, 138, 138) !important;
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,28 @@
+.getStarted-page
+{
+    height: 100vh;
+}
+.getStartedLogo
+{
+    height: 40vh;
+}
+.getStartedBtn
+{
+    background-color: #ff4f4f !important;
+    border: 2px solid #942d2d !important;
+    border-radius: 5px !important;
+    width: 150px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 450px) {
+    .getStartedLogo
+    {
+        height: 30vh;
+    }
+}
+.getStartedBtn:hover
+{
+    border-radius: 20px !important;
+    transition: 0.3s;
+}
