@@ -26,7 +26,7 @@ const DeleteRecipe = () => {
   return (
     <div>
       
-        <div className="row w-100 justify-content-center ">
+        <div className="row w-100 justify-content-center " id="deleterecipePage">
           <div className="col">
             <MyNavbar></MyNavbar>
             <Title name={"Hello Admin!"}></Title>

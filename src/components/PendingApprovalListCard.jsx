@@ -3,10 +3,12 @@ import "./styling/ListCard.css";
 import { useState, useEffect } from "react";
 import { useFirebase } from "../context/firebase";
 import HrTag from "./HrTag";
+import "./styling/ApprovalListCard.css";
 import { Button } from "react-bootstrap";
 import { PendingApprovalContext } from "../pages/PendingApprovals";
+import Accordion from "react-bootstrap/Accordion";
 const PendingApprovalListCard = ({
-    identity,
+  identity,
   heading,
   description,
   author,
@@ -26,7 +28,7 @@ const PendingApprovalListCard = ({
     await firebase.approveRecipe(identity);
     // Call the context function to update the data
     approvalContext(false);
-  }
+  };
   useEffect(() => {
     const fetchData = async () => {
       await firebase.getImageURL(imageURL).then((URL) => setURL(URL));
@@ -42,27 +44,49 @@ const PendingApprovalListCard = ({
         <div className="col-7 col-lg-6 align-self-center listcard-text">
           <h6>{heading}</h6>
           <p>{description}</p>
-          <p onClick={authorHandler}><strong>By :</strong> {author}</p>
-          <p><strong>Category :</strong> {category}</p>
-            <p><strong>Description :</strong> {description}</p>
-            <p><strong>Ingredients :</strong> {ingredients}</p>
-            <p><strong>Recipe :</strong> {recipe}</p>
-            <p><strong>UserID :</strong> {userID}</p>
-            <p><strong>UserEmail :</strong> {userEmail}</p>
-            <Button
-                variant="danger"
-                className="w-100 align-self-center ownerPageBtn"
-                onClick={approveRecipe}
-             >
-              Approve Recipe
-            </Button>
+          <p onClick={authorHandler}>
+            <strong>By :</strong> {author}
+          </p>
+          <p>
+            <strong>Category :</strong> {category}
+          </p>
+          <p>
+            <strong>Description :</strong> {description}
+          </p>
+          <Accordion className="accordion accordion-flush">
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <strong>Ingredients :</strong>
+              </Accordion.Header>
+              <Accordion.Body>{ingredients}</Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>
+                <strong>Recipe :</strong>
+              </Accordion.Header>
+              <Accordion.Body>{recipe}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+
+          <p>
+            <strong>UserID :</strong> {userID}
+          </p>
+          <p>
+            <strong>UserEmail :</strong> {userEmail}
+          </p>
+          <Button
+            variant="danger"
+            className="w-100 align-self-center ownerPageBtn"
+            onClick={approveRecipe}
+          >
+            Approve Recipe
+          </Button>
         </div>
         <div className="col d-lg-none">
           <HrTag></HrTag>
         </div>
       </div>
     </div>
-    
   );
 };
 

@@ -368,11 +368,11 @@ const FirebaseProvider = (props) => {
           deleteDoc(documentRef);
           console.log("Document successfully deleted.");
 
-          if (document.getElementById("ownerPage")){ document
+          if (document.getElementById("deleterecipePage")){ document
             .getElementById("alert-delete-success")
             .classList.remove("d-none");
           setTimeout(() => {
-            if (document.getElementById("ownerPage"))
+            if (document.getElementById("deleterecipePage"))
               document
                 .getElementById("alert-delete-success")
                 .classList.add("d-none");

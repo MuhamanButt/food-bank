@@ -43,8 +43,8 @@ const AddARecipe = () => {
       : setRecipeName(e.target.value);
   };
   const DescriptionHandler = (e) => {
-    e.target.value.length > 60
-      ? invokeDangerAlert("Description", 60)
+    e.target.value.length > 100
+      ? invokeDangerAlert("Description", 100)
       : setDescription(e.target.value);
   };
   const IngredientsHandler = (e) => {
