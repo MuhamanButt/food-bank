@@ -25,6 +25,7 @@ const ListCard = ({
   category,
   authorHandler,
   seeReviewsHandler,
+  changeFlag
 }) => {
   const [URL, setURL] = useState(null);
   const [lgShow, setLgShow] = useState(false);
@@ -64,6 +65,7 @@ const ListCard = ({
   const deleteRecipe = async () => {
     await firebase.deleteRecipeByName(heading);
     handleClose();
+    document.getElementById(identity).classList.add("d-none")
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -76,7 +78,7 @@ const ListCard = ({
     fetchData();
   }, [imageURL]);
   return (
-    <div className="col-11 col-lg-5 listCard-row">
+    <div className="col-11 col-lg-5 listCard-row" >
       {show ? (
         <ConfirmationComponent
           heading={"Confirm Delete"}
@@ -90,7 +92,7 @@ const ListCard = ({
         ""
       )}
 
-      <div className="row list-card">
+      <div className="row list-card" id={identity}>
         <div className="col-12">
         {userIsSame ? (
             <i

@@ -2,13 +2,23 @@ import React, { useEffect } from "react";
 import ListCard from "./ListCard";
 import { useNavigate } from "react-router-dom";
 import { useFirebase } from "../context/firebase";
+import { useState } from "react";
 const List = ({ RecipeList }) => {
   const firebase=useFirebase();
+  const [Flag, setFlag] = useState("");
   const navigate = useNavigate();
   const ViewHandler = (str) => {
     navigate(str);
   };
+  const changeFlag = () => {
+    if (Flag === true) {
+      setFlag(false);
+    } else {
+      setFlag(true);
+    }
+  };
   
+  useEffect(()=>{},[Flag])
   return (
     
     <div className="row justify-content-center m-0 overflow-x-hidden" data-aos="fade-right"
@@ -26,6 +36,7 @@ const List = ({ RecipeList }) => {
           category={recipe.data().category}
           authorHandler={() => ViewHandler(`/users/view/${recipe.data().userID}`)}
           seeReviewsHandler={() => ViewHandler(`/recipes/reviews/${recipe.data().identity}`)}
+          changeFlag={changeFlag}
         ></ListCard>
       ))}
     </div>
