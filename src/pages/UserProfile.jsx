@@ -24,7 +24,7 @@ const UserProfile = () => {
     } else {
       const filterRecipes = async () => {
         const category = GlobalRecipe.filter((recipe) =>
-          recipe.data().recipeName.includes(str)
+        recipe.data().recipeName.toLowerCase().includes(str.toLowerCase())
         );
         category && setRecipes(category);
       };
