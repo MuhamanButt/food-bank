@@ -37,7 +37,6 @@ const AddARecipe = () => {
     }, 2000);
   };
   const recipeNameHandler = (e) => {
-    console.log(RecipeName)
     e.target.value.length > 20
       ? invokeDangerAlert("Recipe Name", 20)
       : setRecipeName(e.target.value);

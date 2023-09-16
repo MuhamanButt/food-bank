@@ -28,21 +28,25 @@ const RecipeDetail = () => {
     }
     return "";
   };
+  
   useEffect(() => {
     const fetchData = async () => {
-      const recipesData = await firebase.getRecipeByIdentity(params.recipeId);
-      setRecipe(recipesData.docs[0].data());
-      setRecipeIsLoaded(true);
-      if (RecipeIsLoaded)
+      let id=params.recipeId;
+      console.log(id+'/')
+      const recipesData = await firebase.getRecipeByIdentity(id);
+      if(recipesData.docs.length>0)
+    {  setRecipe(recipesData.docs[0].data());
+      setRecipeIsLoaded(true);}
+      if (RecipeIsLoaded) {
         await firebase
           .getImageURL(Recipe.pictureURL)
           .then((URL) => setURL(URL));
+        setLoaderState(false);
+      }
     };
     fetchData();
-    if (RecipeIsLoaded) {
-      setLoaderState(false);
-    }
   }, [RecipeIsLoaded]);
+  
   return (
     <div>
       <MyNavbar></MyNavbar>
@@ -87,9 +91,10 @@ const RecipeDetail = () => {
             </div>
             <div className="col">
             <NameDisplay
-                heading={"Ingredients : "}
-                description={getIngredients()}
-              ></NameDisplay>
+  heading={"Ingredients : "}
+  description={getIngredients()}
+></NameDisplay>
+
               <NameDisplay
                 heading={"Recipe : "}
                 description={Recipe.recipe}

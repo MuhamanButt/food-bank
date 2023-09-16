@@ -42,11 +42,10 @@ export const useFirebase = () => useContext(firebaseContext);
 const FirebaseProvider = (props) => {
   const [User, setUser] = useState(null);
   const [OwnerState, setOwnerState] = useState(false);
-  const [lastViewedPage, setlastViewedPage] = useState('/');
-const setLastViewedPage=async (str)=>{
-  setlastViewedPage(str)
-  
-}
+  const [lastViewedPage, setlastViewedPage] = useState("/");
+  const setLastViewedPage = async (str) => {
+    setlastViewedPage(str);
+  };
   //!-----------------------------------------------------------------------------getImageURL
   const getImageURL = (path) => {
     return getDownloadURL(ref(storage, path));
@@ -74,10 +73,11 @@ const setLastViewedPage=async (str)=>{
         .classList.remove("d-none");
 
       setTimeout(() => {
-        if (document.getElementById("pendingApprovalPage"))
-          {document
+        if (document.getElementById("pendingApprovalPage")) {
+          document
             .getElementById("alert-approval-success")
-            .classList.add("d-none");}
+            .classList.add("d-none");
+        }
       }, 2000);
       console.log("Document moved successfully");
     });
@@ -108,10 +108,10 @@ const setLastViewedPage=async (str)=>{
           `uploads/images/${Date.now()}-${picture.name}`
         );
         const uploadResult = await uploadBytes(imageRef, picture);
-
+        if (recipeName[recipeName.length - 1] == " ")
+          recipeName = recipeName.slice(0, -1);
         // Get the URL of the uploaded image
         const pictureURL = await getDownloadURL(uploadResult.ref);
-
         // Add the document to Firestore with the image URL
         await addDoc(collection(firestore, "approvals"), {
           identity: `${Date.now()}-${recipeName}`,
@@ -137,17 +137,22 @@ const setLastViewedPage=async (str)=>{
     const recipesCollectionRef = collection(firestore, "recipes");
     const q = query(recipesCollectionRef, where("identity", "==", identity));
     const RecipeData = await getDocs(q);
-  
+
     if (RecipeData.docs.length > 0) {
       const recipeId = RecipeData.docs[0].id; // Get the ID of the first document
-      const reviewsCollectionRef = collection(firestore, "recipes", recipeId, "Reviews");
+      const reviewsCollectionRef = collection(
+        firestore,
+        "recipes",
+        recipeId,
+        "Reviews"
+      );
       return await getDocs(reviewsCollectionRef);
     } else {
       // Handle the case where no matching recipe was found
       return [];
     }
-  }
-    //!-----------------------------------------------------------------------------addReviewToRecipe
+  };
+  //!-----------------------------------------------------------------------------addReviewToRecipe
   const addReviewToRecipe = async (
     identity,
     userDetails,
@@ -161,13 +166,21 @@ const setLastViewedPage=async (str)=>{
     const recipeId = RecipeData.docs[0].id;
 
     const userCollectionRef = collection(firestore, "users");
-    const qu = query(userCollectionRef, where("identity", "==", userDetails.uid));
+    const qu = query(
+      userCollectionRef,
+      where("identity", "==", userDetails.uid)
+    );
     const userData = await getDocs(qu);
 
     const userName = userData.docs[0].data().userName;
-  
-    const reviewsCollectionRef = collection(firestore, "recipes", recipeId, "Reviews");
-  
+
+    const reviewsCollectionRef = collection(
+      firestore,
+      "recipes",
+      recipeId,
+      "Reviews"
+    );
+
     await addDoc(reviewsCollectionRef, {
       userName: userName,
       reviewPoints: ReviewPoints,
@@ -372,26 +385,30 @@ const setLastViewedPage=async (str)=>{
           deleteDoc(documentRef);
           console.log("Document successfully deleted.");
 
-          if (document.getElementById("deleterecipePage")){ document
-            .getElementById("alert-delete-success")
-            .classList.remove("d-none");
-          setTimeout(() => {
-            if (document.getElementById("deleterecipePage"))
-              document
-                .getElementById("alert-delete-success")
-                .classList.add("d-none");
-          }, 2000);}
+          if (document.getElementById("deleterecipePage")) {
+            document
+              .getElementById("alert-delete-success")
+              .classList.remove("d-none");
+            setTimeout(() => {
+              if (document.getElementById("deleterecipePage"))
+                document
+                  .getElementById("alert-delete-success")
+                  .classList.add("d-none");
+            }, 2000);
+          }
         } catch (error) {
           console.error("Error deleting document: ", error);
-          if (document.getElementById("ownerPage")){document
-            .getElementById("alert-delete-danger")
-            .classList.remove("d-none");
-          if (document.getElementById("ownerPage"))
-            setTimeout(() => {
-              document
-                .getElementById("alert-delete-danger")
-                .classList.add("d-none");
-            }, 2000);}
+          if (document.getElementById("ownerPage")) {
+            document
+              .getElementById("alert-delete-danger")
+              .classList.remove("d-none");
+            if (document.getElementById("ownerPage"))
+              setTimeout(() => {
+                document
+                  .getElementById("alert-delete-danger")
+                  .classList.add("d-none");
+              }, 2000);
+          }
         }
       });
     } else {
@@ -505,7 +522,7 @@ const setLastViewedPage=async (str)=>{
         getReviewsOfRecipe,
         User,
         setLastViewedPage,
-        lastViewedPage
+        lastViewedPage,
       }}
     >
       {props.children}
