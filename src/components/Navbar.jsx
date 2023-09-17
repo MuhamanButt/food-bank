@@ -18,7 +18,7 @@ const MyNavbar = () => {
   const firebase=useFirebase();
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [show, setShow] = useState(false);
-
+const [OwnerState, setOwnerState] = useState(firebase.OwnerState);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 const [UserName, setUserName] = useState("");
@@ -26,15 +26,21 @@ const [UserName, setUserName] = useState("");
     setShowOffcanvas(true);
   };
   const logOutHandler = async () => {
-    if(firebase.User)
-    {await firebase.signOutUser();
-      handleClose();}
+    console.log(firebase.OwnerState)
+    if(firebase.User){
+      await firebase.signOutUser();
+      handleClose();
+    }
+    if(firebase.OwnerState){
+      console.log("OwnerState")
+      await signOutHandler();
+    }
   };
   const handleCloseOffcanvas = () => {
     setShowOffcanvas(false);
   };
   const showHandler = async () => {
-    if(firebase.User)
+    if(firebase.User||firebase.OwnerState)
     handleShow();
   };
   const navigate=useNavigate();
@@ -109,7 +115,9 @@ const [UserName, setUserName] = useState("");
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav.Link as={NavLink} to={"/CreateAccount"} className="Link offcanvas-item">Create Account</Nav.Link>
-          <Nav.Link as={NavLink} to={"/login"} className="Link offcanvas-item" onClick={showHandler}> {firebase.User?("Logout"):("Login as User")}</Nav.Link>
+          <Nav.Link as={NavLink} to={firebase.User?(""):(`/login`)} className="Link offcanvas-item" onClick={showHandler}>
+            {firebase.User||firebase.OwnerState?("Logout"):("Login as User")}
+          </Nav.Link>
           <Nav.Link as={NavLink} to={"/loginAsOwner"} className="Link offcanvas-item">Login as Owner</Nav.Link>
         </Offcanvas.Body>
       </Offcanvas>
@@ -158,7 +166,7 @@ const [UserName, setUserName] = useState("");
             Create Account
           </Nav.Link>
           <Nav.Link as={NavLink} to={firebase.User?(""):(`/login`)} className="Link offcanvas-item" onClick={showHandler}>
-            {firebase.User?("Logout"):("Login as User")}
+            {firebase.User||firebase.OwnerState?("Logout"):("Login as User")}
           </Nav.Link>
           <Nav.Link as={NavLink} to={"/loginAsOwner"} className="Link offcanvas-item">
             Login as Owner

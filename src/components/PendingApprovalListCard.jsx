@@ -28,6 +28,8 @@ const PendingApprovalListCard = ({
     await firebase.approveRecipe(identity);
     // Call the context function to update the data
     approvalContext(false);
+
+document.getElementById(`approval${identity}`).classList.add("d-none")
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +38,7 @@ const PendingApprovalListCard = ({
     fetchData();
   }, [imageURL]);
   return (
-    <div className="col-11 col-lg-5 listCard-row">
+    <div className="col-11 col-lg-5 listCard-row" id={`approval${identity}`}>
       <div className="row">
         <div className="col-5 col-lg-6 m-0 p-0 align-self-center">
           <img src={URL} alt="" className="listCard-image" />

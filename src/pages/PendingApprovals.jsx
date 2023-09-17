@@ -17,7 +17,6 @@ const PendingApprovals = () => {
   const [DataIsLoaded, setDataIsLoaded] = useState(false);
 
   const setData = (flag) => {
-    console.log("HELLO")
     setDataIsLoaded(flag);
   };
   useEffect(() => {
