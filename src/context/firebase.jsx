@@ -328,13 +328,11 @@ const FirebaseProvider = (props) => {
         // Email exists in the "admins" collection
         await signInWithEmailAndPassword(firebaseAuth, email, password).then(
           (userCredential) => {
-            console.log(userCredential.user);
             setUser(userCredential.user);
             setOwnerState(true);
           }
         );
         flag = true;
-        console.log('Email exists in "admins" collection.');
       } else {
         // Email doesn't exist in the "admins" collection
         document
